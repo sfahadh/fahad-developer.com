@@ -7,8 +7,9 @@
 	transition: background-color 0.8s ease-in-out;
 
 	.navbar-brand {
+		font-family: $font;
 		font-weight: weight(bold);
-		color: var(--text);
+		color: var(--text) !important;
 		padding: 0.5rem;
 
 		&:hover {
@@ -24,6 +25,7 @@
 
 	#basic-navbar-nav {
 		.nav-link {
+			font-family: $font;
 			margin: 1rem;
 			color: var(--text);
 

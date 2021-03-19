@@ -1,3 +1,5 @@
+@import "../variables";
+
 .toggler-container {
 	margin: auto;
 	display: flex;
@@ -8,6 +10,7 @@
 	span {
 		flex-direction: column;
 		margin-bottom: 20px;
+		font-family: $font;
 	}
 }
 
