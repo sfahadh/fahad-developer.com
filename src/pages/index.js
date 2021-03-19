@@ -9,9 +9,8 @@ import SEO from "../components/seo"
 
 const IndexPage = props => (
   <Layout>
-    { console.log(props) }
     <SEO title="Home" />
-    <Blog />
+    <Blog blogs={ props.data.allContentfulBlogPost.edges } />
   </Layout>
 )
 
