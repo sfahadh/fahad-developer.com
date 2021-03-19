@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import PropTypes from 'prop-types';
 // import AniLink from "gatsby-plugin-transition-link/AniLink";
-// import Toggle from "./toggle";
+import Toggle from "./toggle";
 import { Link } from "gatsby";
 import "../../styles/header/header.scss";
 
@@ -48,7 +48,7 @@ class Header extends React.Component {
                         <Nav className="navbar-items">
                             <Link to="/projects" className="nav-link">Projects</Link>
                             <Link to="/blogs" className="nav-link">Blogs</Link>
-                            {/* <Toggle /> */}
+                            <Toggle />
                         </Nav>
                     </Navbar.Collapse>
                 </div>
