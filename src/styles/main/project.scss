@@ -1,0 +1,58 @@
+@import "../variables";
+@import "../functions";
+
+.project-card {
+    display: flex;
+    align-items: center;
+
+    .projectImg {
+        flex: 1.2;
+    }
+
+    .content {
+        flex: 0.8;
+        display: flex;
+		flex-direction: column;
+
+        span {
+            text-transform: uppercase;
+		    font-weight: weight(medium);
+            color: $danger;
+            font-family: $font;
+            font-size: description(small);
+        }
+
+        h2 {
+            font-size: subHeader(large);
+            font-weight: weight(medium);
+            font-family: $font;
+        }
+    
+        p {
+            opacity: 0.8;
+		    font-family: $font;
+		    font-size: description(medium);
+        }
+
+        h6 {
+			font-family: $font;
+			font-size: description(small);
+		}
+
+        a {
+            color: $primary;
+        }
+    }
+}
+
+@media (max-width: 991px) { 
+    .project-container {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 767px) { 
+    .project-card { 
+        display: block;
+    }
+}
