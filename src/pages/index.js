@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Blog from "../components/main/blog/blog"
+import Blog from "../components/main/blog"
 import SEO from "../components/seo"
 
 const IndexPage = props => (
