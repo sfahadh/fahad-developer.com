@@ -1,22 +1,22 @@
 import React from "react";
-// import { useStaticQuery, graphql } from "gatsby"
-
+import { useStaticQuery, graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { GoMarkGithub } from "react-icons/go";
 import { FiLink } from "react-icons/fi";
 
 import "../../styles/main/project.scss"
 
 const Project = ({ project, images }) => {
-    // const data = useStaticQuery(graphql`
-    //     query {
-    //         imageSharp(fluid: {originalName: {eq: "breaking-bricks.png"}}) {
-    //             fluid {
-    //                 ...GatsbyImageSharpFluid
-    //             }
-    //         }
-    //     }
-    // `)
+    const data = useStaticQuery(graphql`
+        query {
+            imageSharp(fluid: {originalName: {eq: "breaking-bricks.png"}}) {
+                gatsbyImageData
+            }
+        }
+    `)
     
+    const image = getImage(data.imageSharp);
+
     return (
         <section className="project-container">
             { project ? 
@@ -51,7 +51,7 @@ const Project = ({ project, images }) => {
                 :
                 <div className="container project-card">
                     <div className="projectImg">
-                        {/* <Img fluid={data.imageSharp.fluid} /> */}
+                        <GatsbyImage image={ image } alt="Breaking Bricks" />
                     </div>
 
                     <div className="content">
