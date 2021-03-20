@@ -4,9 +4,10 @@ import { graphql } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Blog from "../components/main/blog"
 import Landing from "../components/main/landing";
 import About from "../components/main/about";
+import Project from "../components/main/project";
+import Blog from "../components/main/blog"
 import SEO from "../components/seo"
 
 const IndexPage = props => (
@@ -14,6 +15,7 @@ const IndexPage = props => (
     <SEO title="Home" />
     <Landing />
     <About />
+    <Project />
     <Blog blogs={props.data.allContentfulBlogPost.edges} />
   </Layout>
 )
