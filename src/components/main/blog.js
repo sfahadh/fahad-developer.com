@@ -7,7 +7,7 @@ const Blogs = ({ blogs }) => {
             <div className="blog-container">
                 <div className="container">
                     <div className="row blog-list">
-                    {blogs.map(({ node }) => {
+                    { blogs.map(({ node }) => {
                             return (
                                 <article key={node.slug} className="col-lg-4 col-md-6 mb-5">
                                     <Img fluid={node.thumbnail.fluid} />
