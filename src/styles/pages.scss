@@ -5,6 +5,11 @@
 	margin: 150px 0;
 }
 
+hr {
+	border: 1px solid $primary;
+	margin-bottom: -6rem;
+}
+
 .post {
 	header {
 		width: 75%;

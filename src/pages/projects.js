@@ -19,7 +19,7 @@ const Projects = props => {
 			<div className="projects-container">
 				<div className="container">
 					<Bio numOfBlogs="3" content={ content } />
-					{/* <hr style={{ marginBottom: rhythm(-3) }} /> */}
+					<hr />
 				</div>
 			</div>
 
