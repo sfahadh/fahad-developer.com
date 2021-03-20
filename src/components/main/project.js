@@ -1,5 +1,4 @@
 import React from "react";
-import Img from "gatsby-image"
 // import { useStaticQuery, graphql } from "gatsby"
 
 import { GoMarkGithub } from "react-icons/go";
@@ -23,14 +22,14 @@ const Project = ({ project, images }) => {
             { project ? 
                 <div className="container project-card">
                     <div className="projectImg">
-                        {
+                        {/* {
                             images.map(({ node }) => {
                                 if (node.name === project.imageName) {
                                     return <Img fluid={node.childImageSharp.fluid} key={node.name}/>
                                 }
                                 
                             })
-                        }
+                        } */}
                     </div>
 
                     <div className="content">

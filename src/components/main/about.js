@@ -1,7 +1,7 @@
 import React from "react";
 import { VscTrash } from "react-icons/vsc";
 import { GiMuscleFat } from "react-icons/gi";
-import dev from "../../images/dev.svg";
+import { StaticImage } from "gatsby-plugin-image"
 import "../../styles/main/about.scss";
 
 const About = () => {
@@ -17,7 +17,7 @@ const About = () => {
                 </div>
                 
                 <div className="thumbnail">
-                    <img src={dev} alt="I’m Fahad, buy me lunch!" />
+                    <StaticImage src="../../images/dev.svg" alt="Typing on my laptop" placeholder="blurred" />
                 </div>
             </div>
         </section>
