@@ -37,13 +37,7 @@ export const pageQuery = graphql`
           }
 
           thumbnail {
-            fluid {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-            }
+            gatsbyImageData
           }
         }
       }

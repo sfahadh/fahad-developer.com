@@ -16,7 +16,6 @@ const Project = ({ project, images }) => {
     `)
     
     const image = getImage(data.imageSharp);
-
     return (
         <section className="project-container">
             { project ? 
