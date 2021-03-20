@@ -8,7 +8,7 @@ const Post = ({ data }) => {
     return (
         <Layout>
             <h1>{ post.title }</h1>
-            <h6>{post.published}</h6>
+            <h6>{ post.published }</h6>
             <p>{ post.body.raw }</p>
         </Layout>
     )

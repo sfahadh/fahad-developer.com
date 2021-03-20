@@ -1,0 +1,49 @@
+import React from "react"
+import { StaticImage } from "gatsby-plugin-image";
+import "../styles/bio.scss";
+
+const Bio = ({ numOfBlogs, content }) => {
+  return (
+		<div className="bio">
+			<div className="logo">
+                <StaticImage src="../images/logo2.png" alt="Logo" placeholder="blurred" />
+		  	</div>
+		  
+		  	<div className="bio-content">
+			  	{/* <h1>{content.header}</h1>
+			  
+				<p>{content.description}</p> */}
+			  
+			  <ul>
+			 		<h5>NEW YORK</h5>
+
+				  	<h6 className="bullet ml-2 mr-2">•</h6>
+				  
+				  	{/* <h5>{numOfBlogs} {content.type}</h5> */}
+
+					<h6 className="ml-2 mr-2">•</h6>
+				  
+					<a
+						href="https://github.com/sfahadh"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						GITHUB
+					</a>
+
+					<h6 className="ml-2 mr-2">•</h6>
+
+					<a
+						href="https://www.linkedin.com/in/fahad-hussain23/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						LINKEDIN
+					</a>
+				</ul>
+			</div>
+		</div>
+	)
+}
+
+export default Bio
