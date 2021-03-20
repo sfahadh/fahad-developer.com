@@ -23,10 +23,8 @@ const Projects = props => {
 				</div>
 			</div>
 
-			{ ProjectsData.map((project, index) => {
-                return <Project project={project} key={index}
-                    // images={props.data.allFile.edges}
-                />
+            { ProjectsData.map((project, index) => {
+                return <Project project={ project } key={ index } />
 			})}
 		</Layout>
 	)

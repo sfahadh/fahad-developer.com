@@ -5,7 +5,8 @@
         "tags": ["React"],
         "sourceLink": "https://github.com/sfahadh/Food-Content-App",
         "liveLink": "https://food-database-app.herokuapp.com/",
-        "imageName": "nutri-gainz"
+        "imageName": "nutri-gainz",
+        "imageLink": "../images/projects/nutri-gainz.png"
     },
 
     {
@@ -14,7 +15,8 @@
         "tags": ["React", "Ruby on Rails", "PostgreSQL"],
         "sourceLink": "https://github.com/sfahadh/Lifters-Paradise",
         "liveLink": "https://lifters-paradise.herokuapp.com/",
-        "imageName": "lifters-paradise"
+        "imageName": "lifters-paradise",
+        "imageLink": "../images/projects/lifters-paradise.png"
     },
 
     {
@@ -23,7 +25,8 @@
         "tags": ["React", "Express", "PostgreSQL"],
         "sourceLink": "https://github.com/sfahadh/Leisurely-Slacking",
         "liveLink": "https://fh-slackers.surge.sh/",
-        "imageName": "leisurely-slackers"
+        "imageName": "leisurely-slackers",
+        "imageLink": "../images/projects/leisurely-slackers.png"
     },
 
     {
@@ -32,6 +35,7 @@
         "tags": ["JavaScript"],
         "sourceLink": "https://github.com/sfahadh/Tic-tac-toe",
         "liveLink": "https://fahadhussain-tictactoe.netlify.app/",
-        "imageName": "mortal-tic-tac-toe"
+        "imageName": "mortal-tic-tac-toe",
+        "imageLink": "../images/projects/mortal-tic-tac-toe.png"
     }
 ]

@@ -6,29 +6,40 @@ import { FiLink } from "react-icons/fi";
 
 import "../../styles/main/project.scss"
 
-const Project = ({ project, images }) => {
+const Project = ({ project }) => {
     const data = useStaticQuery(graphql`
         query {
             imageSharp(fluid: {originalName: {eq: "breaking-bricks.png"}}) {
                 gatsbyImageData
             }
+
+            allImageSharp {
+                edges {
+                    node {
+                        fluid {
+                            originalName
+                        }
+                        gatsbyImageData
+                    }
+                }
+            }
         }
     `)
     
-    const image = getImage(data.imageSharp);
+    const defaultImg = getImage(data.imageSharp);
     return (
         <section className="project-container">
             { project ? 
                 <div className="container project-card">
                     <div className="projectImg">
-                        {/* {
-                            images.map(({ node }) => {
-                                if (node.name === project.imageName) {
-                                    return <Img fluid={node.childImageSharp.fluid} key={node.name}/>
+                        {
+                            data.allImageSharp.edges.map(({ node }) => {
+                                const image = getImage(node.gatsbyImageData);
+                                if (node.fluid.originalName === `${project.imageName}.png`) {
+                                    return <GatsbyImage image={ image } alt= {project.imageName } key={ project.imageName } />
                                 }
-                                
                             })
-                        } */}
+                        }
                     </div>
 
                     <div className="content">
@@ -50,7 +61,7 @@ const Project = ({ project, images }) => {
                 :
                 <div className="container project-card">
                     <div className="projectImg">
-                        <GatsbyImage image={ image } alt="Breaking Bricks" />
+                        <GatsbyImage image={ defaultImg } alt="Breaking Bricks" />
                     </div>
 
                     <div className="content">
