@@ -1,15 +1,32 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import BlogFooter from "../components/main/_blogFooter";
 
 const Post = ({ data }) => {
     const post = data.contentfulBlogPost;
 
     return (
         <Layout>
-            <h1>{ post.title }</h1>
-            <h6>{ post.published }</h6>
-            <p>{ post.body.raw }</p>
+            <article className="post-container">
+                <div className="container-md post">
+                    <header>
+                        { post.tags ? (
+                                <div className="tags">
+                                    { post.tags.map(tag => <span key={tag + `tag`}>{tag}</span>) }
+                                </div>
+                        ) : null }
+
+                        <h1>{ post.title }</h1>
+                        <hr />
+                        <BlogFooter date={ post.published }/>
+                    </header>
+
+                    <section>
+                        <p>{ post.body.raw }</p>
+                    </section>
+                </div>
+			</article>
         </Layout>
     )
 }
@@ -21,6 +38,7 @@ export const pageQuery = graphql`
         contentfulBlogPost(slug: { eq: $slug }) {
             title
             published(formatString: "MMMM Do, YYYY")
+            tags
             body {
                 raw
             }
