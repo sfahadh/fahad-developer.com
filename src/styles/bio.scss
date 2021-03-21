@@ -5,12 +5,11 @@
 	display: flex;
 
 	.logo {
-		width: 180px;
-		margin: auto;
+		border: 2px solid red;
+		width: 220px;
 
 		Img {
 			width: 100%;
-			padding-bottom: 10px;
 		}
 	}
 }
