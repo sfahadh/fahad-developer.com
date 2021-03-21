@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import BlogFooter from "./_blogFooter";
 import "../../styles/main/blog.scss";
 
 const Blogs = ({ blogs }) => {
@@ -23,6 +24,8 @@ const Blogs = ({ blogs }) => {
                                 <section>
                                     <p>{ node.synopsis.synopsis }</p>
                                 </section>
+
+                                <BlogFooter date={ node.published } />
                             </article>
                         )
                     }) } 
