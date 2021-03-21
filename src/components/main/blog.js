@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 import BlogFooter from "./_blogFooter";
 import "../../styles/main/blog.scss";
 
@@ -18,7 +19,7 @@ const Blogs = ({ blogs }) => {
                                 </div>
 
                                 <header>
-                                    <h2>{ node.title }</h2>
+                                    <Link to={`/blogs/${node.slug}`}><h2>{ node.title }</h2></Link>
                                 </header>
 
                                 <section>
