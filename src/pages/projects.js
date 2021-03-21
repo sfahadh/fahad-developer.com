@@ -18,7 +18,7 @@ const Projects = props => {
 		<Layout location={ props.location } title={ siteTitle }>
 			<div className="projects-container">
 				<div className="container">
-					<Bio numOfBlogs="3" content={ content } />
+					<Bio numOfContent={ ProjectsData.length } content={ content } />
 					<hr />
 				</div>
 			</div>

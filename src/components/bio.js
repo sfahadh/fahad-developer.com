@@ -2,7 +2,7 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image";
 import "../styles/bio.scss";
 
-const Bio = ({ numOfBlogs, content }) => {
+const Bio = ({ numOfContent, content }) => {
   return (
 		<div className="bio">
 			<div className="logo mr-3 mb-1">
@@ -16,7 +16,7 @@ const Bio = ({ numOfBlogs, content }) => {
 			  <ul>
 			 		<h5>NEW YORK</h5>
 				  	<h6 className="bullet ml-2 mr-2">•</h6>
-				  	<h5>{ numOfBlogs } { content.type }</h5>
+				  	<h5>{ numOfContent } { content.type }</h5>
 					<h6 className="ml-2 mr-2">•</h6>
 				  
 					<a
