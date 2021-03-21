@@ -5,7 +5,7 @@ import "../styles/bio.scss";
 const Bio = ({ numOfBlogs, content }) => {
   return (
 		<div className="bio">
-			<div className="logo">
+			<div className="logo mr-3 mb-1">
                 <StaticImage src="../images/logo.png" alt="Logo" placeholder="blurred" />
 		  	</div>
 		  
