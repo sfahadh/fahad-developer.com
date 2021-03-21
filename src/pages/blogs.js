@@ -9,20 +9,22 @@ import "../styles/pages.scss";
 
 const Blogs = props => {
 	const siteTitle = props.data.site.siteMetadata.title;
+	const blogs = props.data.allContentfulBlogPost.edges;
 	const content = {
 		header: "Blogs",
 		description: "A resource of all blogs I've written",
 		type: "POSTS"
 	}
-
-	console.log(props);
+	
 	return (
 		<Layout location={ props.location } title={ siteTitle }>
 			<div className="blogs-container">
 				<div className="container">
-					<Bio numOfBlogs="3" content={ content } />
+					<Bio numOfBlogs={ blogs.length } content={ content } />
 					<hr />
-					<Blog blogs={ props.data.allContentfulBlogPost.edges } />
+					<div className="blog-list">
+						<Blog blogs={ blogs } />
+					</div>
 				</div>
 			</div>
 		</Layout>

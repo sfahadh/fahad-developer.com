@@ -23,9 +23,11 @@ const Projects = props => {
 				</div>
 			</div>
 
-            { ProjectsData.map((project, index) => {
-                return <Project project={ project } key={ index } />
-			})}
+			<div className="project-list">
+				{ ProjectsData.map((project, index) => {
+					return <Project project={ project } key={ index } />
+				})}
+			</div>
 		</Layout>
 	)
 }
