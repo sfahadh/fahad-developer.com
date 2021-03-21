@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
-// import Blog from "../components/main/blog/blog";
+import Blog from "../components/main/blog";
 import Bio from "../components/bio";
 
 import "../styles/pages.scss";
@@ -15,13 +15,14 @@ const Blogs = props => {
 		type: "POSTS"
 	}
 
+	console.log(props);
 	return (
 		<Layout location={ props.location } title={ siteTitle }>
 			<div className="blogs-container">
 				<div className="container">
 					<Bio numOfBlogs="3" content={ content } />
-					{/* <hr style={{ marginBottom: rhythm(4) }} /> */}
-					{/* <Blog markdowns={markdowns} /> */}
+					<hr />
+					<Blog blogs={ props.data.allContentfulBlogPost.edges } />
 				</div>
 			</div>
 		</Layout>
@@ -35,6 +36,25 @@ export const pageQuery = graphql`
 		site {
 			siteMetadata {
 				title
+			}
+		}
+
+		allContentfulBlogPost(sort: {fields: published, order: DESC}) {
+			edges {
+				node {
+					title
+					slug
+					tags
+					published(formatString: "MMMM Do, YYYY")
+		
+					synopsis {
+						synopsis
+					}
+		
+					thumbnail {
+						gatsbyImageData
+					}
+				}
 			}
 		}
 	}
