@@ -16,7 +16,7 @@ const IndexPage = props => (
     <Landing />
     <About />
     <Project />
-    <Blog blogs={props.data.allContentfulBlogPost.edges} />
+    <Blog blogs={ props.data.allContentfulBlogPost.edges } />
   </Layout>
 )
 
