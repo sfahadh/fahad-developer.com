@@ -6,7 +6,7 @@ const Bio = ({ numOfBlogs, content }) => {
   return (
 		<div className="bio">
 			<div className="logo">
-                <StaticImage src="../images/logo2.png" alt="Logo" placeholder="blurred" />
+                <StaticImage src="../images/logo.png" alt="Logo" placeholder="blurred" />
 		  	</div>
 		  
 		  	<div className="bio-content">

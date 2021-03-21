@@ -1,5 +1,4 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
@@ -10,7 +9,7 @@ const BlogCardFooter = ({ date }) => {
                 <StaticImage src="../../images/logo.png" alt="Logo" placeholder="blurred" />
             </div> 
 
-            <div className="blog-footer-content">
+            <div className="blog-footer-content mt-3">
                 <Link to="/blogs"><h6>BLOGS</h6></Link>
                 <h6>{ date }</h6>
             </div>

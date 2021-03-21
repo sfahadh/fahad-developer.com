@@ -53,24 +53,23 @@
 }
 
 .blog-footer {
-	margin-top: 1.5rem;
 	display: flex;
 	justify-content: start;
 
 	.logo {
-		width: 65px;
-		height: 65px;
+		width: 63px;
+		height: 63px;
 		margin-right: 10px;
 	}
 
 	.blog-footer-content {
-		margin-top: 7px;
 		display: flex;
 		flex-direction: column;
 
 		h6 {
-			margin: 0;
+			margin-top: -3px;
 			font-family: $font;
+			color: var(--text);
 			font-size: description(small);
 		}
 
