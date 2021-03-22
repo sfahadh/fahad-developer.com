@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Bio from "../components/bio";
 import Layout from "../components/layout";
+import Bio from "../components/bio";
 import Project from "../components/main/project";
 import ProjectsData from "../utils/projectsData.json";
 import "../styles/pages.scss";
@@ -16,7 +16,7 @@ const Projects = props => {
 
 	return (
 		<Layout location={ props.location } title={ siteTitle }>
-			<div className="projects-container">
+			<div className="pages-container">
 				<div className="container">
 					<Bio numOfContent={ ProjectsData.length } content={ content } />
 					<hr />

@@ -17,7 +17,7 @@ const Blogs = props => {
 	
 	return (
 		<Layout location={ props.location } title={ siteTitle }>
-			<div className="blogs-container">
+			<div className="pages-container">
 				<div className="container">
 					<Bio numOfContent={ blogs.length } content={ content } />
 					<hr />
