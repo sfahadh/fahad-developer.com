@@ -27,7 +27,7 @@ const Post = ({ data }) => {
                         <p>{ post.body.raw }</p>
                     </section>
 
-                    <PostBody />
+                    <PostBody title={post.title} description={ post.synopsis.synopsis }/>
                 </div>
 			</article>
         </Layout>
@@ -42,6 +42,9 @@ export const pageQuery = graphql`
             title
             published(formatString: "MMMM Do, YYYY")
             tags
+            synopsis {
+                synopsis
+            }
             body {
                 raw
             }
