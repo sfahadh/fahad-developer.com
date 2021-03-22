@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { GoMarkGithub } from "react-icons/go";
 import { FiLink } from "react-icons/fi";
-
 import "../../styles/main/project.scss"
 
 const Project = ({ project }) => {

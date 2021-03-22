@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import ProjectsData from "../utils/projectsData.json";
-import Project from "../components/main/project";
-import Layout from "../components/layout";
 import Bio from "../components/bio";
+import Layout from "../components/layout";
+import Project from "../components/main/project";
+import ProjectsData from "../utils/projectsData.json";
 import "../styles/pages.scss";
 
 const Projects = props => {

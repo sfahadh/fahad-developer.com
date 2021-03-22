@@ -2,9 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
-import Blog from "../components/main/blog";
 import Bio from "../components/bio";
-
+import Blog from "../components/main/blog";
 import "../styles/pages.scss";
 
 const Blogs = props => {
