@@ -38,7 +38,7 @@ const PostBody = ({ content }) => {
     };
 
     return (
-        <article className="blog-body">{ renderRichText(content, options) }</article>
+        <article>{ renderRichText(content, options) }</article>
     )
 }
 

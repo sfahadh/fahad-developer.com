@@ -24,7 +24,6 @@ const Post = ({ data }) => {
                     </header>
 
                     <section>
-                        {/* <p>{ post.body.raw }</p> */}
                         <PostBody content={ post.body }/>
                     </section>
                 </div>
