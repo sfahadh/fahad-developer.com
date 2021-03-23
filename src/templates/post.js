@@ -24,10 +24,9 @@ const Post = ({ data }) => {
                     </header>
 
                     <section>
-                        <p>{ post.body.raw }</p>
+                        {/* <p>{ post.body.raw }</p> */}
+                        <PostBody content={ post.body }/>
                     </section>
-
-                    <PostBody title={post.title} description={ post.synopsis.synopsis }/>
                 </div>
 			</article>
         </Layout>
