@@ -1,6 +1,8 @@
 import React from "react";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { useContentfulImage } from "../utils/useContentfulImage";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const PostBody = ({ content }) => {
     const Bold = ({ children }) => <p className="bold">{ children }</p>;
@@ -16,8 +18,14 @@ const PostBody = ({ content }) => {
             [BLOCKS.HEADING_4]: (node, children) => <h4>{ children }</h4>,
             [BLOCKS.PARAGRAPH]: (node, children) => <Text>{ children }</Text>,
             [BLOCKS.EMBEDDED_ASSET]: node => {
-                console.log(node)
-                return (<img src={ node.data.target.sys.id }/>)
+                const asset = useContentfulImage(node.data.target.sys.id);
+                const image = getImage(asset.node);
+                console.log(asset, image);
+                if (asset) {
+                    return (
+                        <GatsbyImage image={ image } />
+                    )
+                }
             }
             // [BLOCKS.EMBEDDED_ASSET]: node => <code>{ JSON.stringify(node, null, 2) }</code>,
         },
