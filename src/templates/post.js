@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import BlogFooter from "../components/main/_blogFooter";
 import PostBody from "./postBody";
+import "../styles/template.scss";
 
 const Post = ({ data }) => {
     const post = data.contentfulBlogPost;
