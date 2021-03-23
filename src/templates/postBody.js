@@ -22,10 +22,9 @@ const PostBody = ({ content }) => {
                 const image = getImage(asset.node);
                 return <GatsbyImage image={image} alt={ asset.node.contentful_id } src="" />
             }
-            // [BLOCKS.EMBEDDED_ASSET]: node => <code>{ JSON.stringify(node, null, 2) }</code>,
         },
 
-        // renderText: text => text.split("\n").flatMap((text, i) => [i > 0 && <br />, text])
+        renderText: text => text.split("\n").flatMap((text, i) => [i > 0 && <br />, text])
     };
 
     return (
