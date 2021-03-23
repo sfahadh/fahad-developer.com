@@ -2,13 +2,15 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import BlogFooter from "../components/main/_blogFooter";
+import PostBody from "./postBody";
+import "../styles/template.scss";
 
 const Post = ({ data }) => {
     const post = data.contentfulBlogPost;
 
     return (
         <Layout>
-            <article className="post-container">
+            <article className="pages-container">
                 <div className="container-md post">
                     <header>
                         { post.tags ? (
@@ -23,7 +25,7 @@ const Post = ({ data }) => {
                     </header>
 
                     <section>
-                        <p>{ post.body.raw }</p>
+                        <PostBody content={ post.body }/>
                     </section>
                 </div>
 			</article>
@@ -39,6 +41,9 @@ export const pageQuery = graphql`
             title
             published(formatString: "MMMM Do, YYYY")
             tags
+            synopsis {
+                synopsis
+            }
             body {
                 raw
             }
