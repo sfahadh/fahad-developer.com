@@ -20,12 +20,7 @@ const PostBody = ({ content }) => {
             [BLOCKS.EMBEDDED_ASSET]: node => {
                 const asset = useContentfulImage(node.data.target.sys.id);
                 const image = getImage(asset.node);
-                console.log(asset, image);
-                if (asset) {
-                    return (
-                        <GatsbyImage image={ image } />
-                    )
-                }
+                return <GatsbyImage image={image} alt={ asset.node.contentful_id } src="" />
             }
             // [BLOCKS.EMBEDDED_ASSET]: node => <code>{ JSON.stringify(node, null, 2) }</code>,
         },
