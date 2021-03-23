@@ -15,8 +15,14 @@ const PostBody = ({ content }) => {
             [BLOCKS.HEADING_2]: (node, children) => <h2>{ children }</h2>,
             [BLOCKS.HEADING_4]: (node, children) => <h4>{ children }</h4>,
             [BLOCKS.PARAGRAPH]: (node, children) => <Text>{ children }</Text>,
+            [BLOCKS.EMBEDDED_ASSET]: node => {
+                console.log(node)
+                return (<img src={ node.data.target.sys.id }/>)
+            }
             // [BLOCKS.EMBEDDED_ASSET]: node => <code>{ JSON.stringify(node, null, 2) }</code>,
-        }
+        },
+
+        // renderText: text => text.split("\n").flatMap((text, i) => [i > 0 && <br />, text])
     };
 
     return (

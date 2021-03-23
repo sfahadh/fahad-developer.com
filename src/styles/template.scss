@@ -7,6 +7,12 @@ section {
     }
 
     h4 {
-        margin-top: 3rem;
+        margin-top: 2rem;
+    }
+
+    hr {
+        width: 40%;
+        margin-left: 0;
+        border: 2px solid $gray-border;
     }
 }
