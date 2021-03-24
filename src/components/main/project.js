@@ -43,7 +43,7 @@ const Project = ({ projects }) => {
                 :
                 <div className="container project-card">
                     <div className="projectImg">
-                        <StaticImage src="../../images/projects/breaking-bricks.png" alt="Breaking Bricks" placeholder="blurred" />
+                        <StaticImage src="../../images/breaking-bricks.png" alt="Breaking Bricks" placeholder="blurred" />
                     </div>
 
                     <div className="content">
