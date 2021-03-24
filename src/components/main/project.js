@@ -9,14 +9,14 @@ const Project = ({ projects }) => {
     return (
         <section className="project-container">
             { projects ? 
-                <div className="container project-card">
+                <div className="container">
                     {
                         projects.map(({ node }) => {
                             const image = getImage(node.thumbnail);
                             return (
-                                <div key={ node.name } className="project-card">
+                                <div key={ node.name } className="project-card mb-5">
                                     <div className="projectImg">
-                                        <GatsbyImage image={ image } alt={ node.name } />
+                                        <GatsbyImage image={image} alt={node.name} />
                                     </div>
 
                                     <div className="content">
