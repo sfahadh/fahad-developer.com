@@ -1,66 +1,53 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import { GoMarkGithub } from "react-icons/go";
 import { FiLink } from "react-icons/fi";
 import "../../styles/main/project.scss"
 
-const Project = ({ project }) => {
-    const data = useStaticQuery(graphql`
-        query {
-            imageSharp(fluid: {originalName: {eq: "breaking-bricks.png"}}) {
-                gatsbyImageData
-            }
-
-            allImageSharp {
-                edges {
-                    node {
-                        fluid {
-                            originalName
-                        }
-                        gatsbyImageData
-                    }
-                }
-            }
-        }
-    `)
-    
-    const defaultImg = getImage(data.imageSharp);
+const Project = ({ projects }) => {
+    // let image = getImage(images[2].node);
+    // images.map(({ node }) => {
+    //     if (node.resize.originalName === `${project.imageName}.png`) {
+    //         image = getImage(node);
+    //     }
+    // })
     return (
         <section className="project-container">
-            { project ? 
+            { projects ? 
                 <div className="container project-card">
-                    <div className="projectImg">
-                        {
-                            data.allImageSharp.edges.map(({ node }) => {
-                                const image = getImage(node.gatsbyImageData);
-                                if (node.fluid.originalName === `${project.imageName}.png`) {
-                                    return <GatsbyImage image={ image } alt= {project.imageName } key={ project.imageName } />
-                                }
-                            })
-                        }
-                    </div>
+                    {
+                        projects.map(({ node }) => {
+                            return (
+                                <div key={ node.name }>
+                                    <div className="projectImg">
+                                        {/* <GatsbyImage image={ image } alt={ project.imageName } key={ project.imageName } /> */}
+                                    </div>
 
-                    <div className="content">
-                        <div className="tags">{ project.tags.map((tag, id) => <span key={id}>{ tag }</span>) }</div>
-                        <h2>{ project.title }</h2>
-                        <p>{ project.description }</p>
+                                    <div className="content">
+                                        <div className="tags">{ node.tags.map((tag, id) => <span key={id}>{ tag }</span>) }</div>
+                                        <h2>{ node.name }</h2>
+                                        <p>{ node.description.description }</p>
 
-                        <div className="d-flex">
-                            <GoMarkGithub className="mr-2 mt-1" />
-                            <a href={ project.liveLink } target="_blank" rel="noreferrer">Source Code</a>
-                        </div>
+                                        <div className="d-flex">
+                                            <GoMarkGithub className="mr-2 mt-1" />
+                                            <a href={ node.liveLink } target="_blank" rel="noreferrer">Source Code</a>
+                                        </div>
 
-                        <div className="d-flex">
-                            <FiLink className="mr-2 mt-1" />
-                            <a href={ project.sourceLink } target="_blank" rel="noreferrer">Live Site</a>
-                        </div> 
-                    </div>
+                                        <div className="d-flex">
+                                            <FiLink className="mr-2 mt-1" />
+                                            <a href={ node.sourceLink } target="_blank" rel="noreferrer">Live Site</a>
+                                        </div> 
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
                 :
                 <div className="container project-card">
                     <div className="projectImg">
-                        <GatsbyImage image={ defaultImg } alt="Breaking Bricks" />
+                        <StaticImage src="../../images/projects/breaking-bricks.png" alt="Breaking Bricks" placeholder="blurred" />
                     </div>
 
                     <div className="content">

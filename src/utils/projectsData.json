@@ -4,7 +4,7 @@
         "description": "A nutrition tracker website that allows user to look for a food and it's nutrient contents, which includes the number of calories, protein, carbs, and fats.",
         "tags": ["React"],
         "sourceLink": "https://github.com/sfahadh/Food-Content-App",
-        "liveLink": "https://food-database-app.herokuapp.com/",
+        "liveLink": "https://food-database-app.herokuapp.com",
         "imageName": "nutri-gainz",
         "imageLink": "../images/projects/nutri-gainz.png"
     },

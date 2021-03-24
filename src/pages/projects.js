@@ -8,6 +8,7 @@ import "../styles/pages.scss";
 
 const Projects = props => {
 	const siteTitle = props.data.site.siteMetadata.title;
+	const projects = props.data.allContentfulProject.edges;
 	const content = {
 		header: "Projects",
 		description: "A list of all projects I've created",
@@ -24,9 +25,7 @@ const Projects = props => {
 			</div>
 
 			<div className="project-list">
-				{ ProjectsData.map((project, index) => {
-					return <Project project={ project } key={ index } />
-				})}
+				<Project projects={ projects } />
 			</div>
 		</Layout>
 	)
@@ -42,15 +41,22 @@ export const pageQuery = graphql`
 			}
 		}
 
-		allFile(filter: {relativeDirectory: {eq: "images/projects"}}) {
+		allContentfulProject {
 			edges {
 				node {
-					childImageSharp {
-						fluid {
-							src
-						}
-					}
 					name
+					tags
+
+					description {
+						description
+					}
+
+					thumbnail {
+						gatsbyImageData
+					}
+
+					sourceLink
+					liveLink
 				}
 			}
 		}

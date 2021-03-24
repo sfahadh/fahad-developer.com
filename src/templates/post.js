@@ -24,7 +24,7 @@ const Post = ({ data }) => {
                         <BlogFooter date={ post.published }/>
                     </header>
 
-                    <section>
+                    <section className="post-body">
                         <PostBody content={ post.body }/>
                     </section>
                 </div>
