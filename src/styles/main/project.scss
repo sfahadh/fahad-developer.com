@@ -50,8 +50,12 @@
     }
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 991px) { 
     .project-card { 
         display: block;
+
+        .projectImg {
+            margin-bottom: 1rem;
+        }
     }
 }

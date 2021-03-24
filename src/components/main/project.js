@@ -12,7 +12,6 @@ const Project = ({ projects }) => {
                 <div className="container project-card">
                     {
                         projects.map(({ node }) => {
-                            console.log(node);
                             const image = getImage(node.thumbnail);
                             return (
                                 <div key={ node.name } className="project-card">
