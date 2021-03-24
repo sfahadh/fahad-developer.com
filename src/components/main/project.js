@@ -9,7 +9,7 @@ const Project = ({ projects }) => {
     return (
         <section className="project-container">
             { projects ? 
-                <div className="container">
+                <div className="container project-card">
                     {
                         projects.map(({ node }) => {
                             console.log(node);
