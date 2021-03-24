@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
 import Project from "../components/main/project";
-import ProjectsData from "../utils/projectsData.json";
 import "../styles/pages.scss";
 
 const Projects = props => {
@@ -19,7 +18,7 @@ const Projects = props => {
 		<Layout location={ props.location } title={ siteTitle }>
 			<div className="pages-container">
 				<div className="container">
-					<Bio numOfContent={ ProjectsData.length } content={ content } />
+					<Bio numOfContent={ projects.length } content={ content } />
 					<hr />
 				</div>
 			</div>
