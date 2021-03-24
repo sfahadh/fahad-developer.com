@@ -6,10 +6,6 @@
 
 	.logo {
 		width: 180px;
-
-		Img {
-			width: 100%;
-		}
 	}
 }
 
@@ -54,9 +50,8 @@
 		display: block;
 		margin-top: -2rem;
 
-		.logo Img{
-			padding-bottom: 5px;
-			
+		.logo {
+			margin: auto !important;
 		}
 	}
 
