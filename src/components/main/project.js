@@ -6,22 +6,18 @@ import { FiLink } from "react-icons/fi";
 import "../../styles/main/project.scss"
 
 const Project = ({ projects }) => {
-    // let image = getImage(images[2].node);
-    // images.map(({ node }) => {
-    //     if (node.resize.originalName === `${project.imageName}.png`) {
-    //         image = getImage(node);
-    //     }
-    // })
     return (
         <section className="project-container">
             { projects ? 
-                <div className="container project-card">
+                <div className="container">
                     {
                         projects.map(({ node }) => {
+                            console.log(node);
+                            const image = getImage(node.thumbnail);
                             return (
-                                <div key={ node.name }>
+                                <div key={ node.name } className="project-card">
                                     <div className="projectImg">
-                                        {/* <GatsbyImage image={ image } alt={ project.imageName } key={ project.imageName } /> */}
+                                        <GatsbyImage image={ image } alt={ node.name } />
                                     </div>
 
                                     <div className="content">
