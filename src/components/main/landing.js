@@ -1,6 +1,7 @@
 import React from "react";
 import Space from "./_space";
 import "../../styles/main/landing.scss";
+import "../../styles/global.scss";
 
 
 const Landing = () => {

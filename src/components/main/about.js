@@ -11,8 +11,8 @@ const About = () => {
                 <div className="details">
                     <h1 className="mb-3">about me</h1>
                     <h3 className="mb-3">An engineer who likes to eat, sleep & lift <GiMuscleFat /></h3>
-                    <p>Transitioned from a career as a Personal Trainer with an original goal of becoming
-                        a Physical Therapist. Treat me to lunch (coffee is <VscTrash />) and I'll tell you more
+                    <p>Transitioned from a career of a Personal Trainer in pursuit becoming a Physical
+                        Therapist to an engineer. Treat me to lunch (coffee is <VscTrash />) and I'll tell you more
                     </p>
                 </div>
                 
