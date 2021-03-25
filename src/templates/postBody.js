@@ -21,6 +21,20 @@ const PostBody = ({ content }) => {
                 const asset = useContentfulImage(node.data.target.sys.id);
                 const image = getImage(asset.node);
                 return <GatsbyImage image={ image } alt={ asset.node.contentful_id } src="" />
+            },
+            [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+                const { __typename } = node.data.target;
+                switch (__typename) {
+                    case "ContentfulCodeBlock":
+                        const { language, code } = node.data.target;
+                        return (
+                            <pre className={ language }>
+                                <code>{ code }</code>
+                            </pre>
+                        )
+                    default:
+                        return null;
+                }   
             }
         },
 
