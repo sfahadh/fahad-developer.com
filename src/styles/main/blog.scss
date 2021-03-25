@@ -13,6 +13,11 @@
 		font-weight: weight(medium);
 		font-family: $font;
 
+		&:hover {
+			text-decoration: underline;
+			color: $primary;
+		}
+
 		a {
 			background-image: linear-gradient(
 				to bottom,
