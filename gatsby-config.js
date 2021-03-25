@@ -4,19 +4,18 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Portfolio Blog`,
+    description: `A portfolio of my work and blogs I've written`,
+    author: `Fahad Hussain`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [ process.env.GA_TRACKING_ID ],
-        pluginConfig: {
-          head: true,
-        }
-      }
+        head: true,
+        anonymize: true,
+      },
     },
 
     `gatsby-plugin-react-helmet`,
