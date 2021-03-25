@@ -2,14 +2,10 @@
 @import "./variables";
 
 .pages-container {
-	margin: 200px 0;
+	margin-top: 200px;
 }
 
-.project-list {
-	margin-top: -6rem;
-}
-
-.blog-list {
+.blog-list, .project-list {
 	margin-top: 5rem;
 }
 

@@ -20,6 +20,7 @@ const Blogs = props => {
 				<div className="container">
 					<Bio numOfContent={ blogs.length } content={ content } />
 					<hr />
+					
 					<div className="blog-list">
 						<Blog blogs={ blogs } />
 					</div>
