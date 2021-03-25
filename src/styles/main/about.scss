@@ -37,19 +37,7 @@
         flex-direction: column;
 
         .details {
-            margin-bottom: 1rem;
-            
-            h1 {
-                font-size: header(medium);
-            }
-    
-            h3 {
-                font-size: subHeader(medium);
-            }
-        
-            p {
-                font-size: description(medium);
-            }
+            margin-bottom: 2rem;
 
             h1, h3, p {
                 text-align: center;
@@ -68,7 +56,23 @@
         margin-bottom: 2rem;
     }
 
-    .aboutMe .thumbnail {
-        width: 100%;
+    .aboutMe {
+       .details {
+            h1 {
+                font-size: header(medium);
+            }
+
+            h3 {
+                font-size: subHeader(medium);
+            }
+        
+            p {
+                font-size: description(medium);
+            }
+       }
+
+        .thumbnail {
+            width: 100%;
+        }
     }
 }
