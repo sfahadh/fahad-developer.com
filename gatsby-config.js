@@ -18,10 +18,10 @@ module.exports = {
       },
     },
 
+    `gatsby-plugin-dark-mode`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-dark-mode`,
     
     {
       resolve: `gatsby-source-filesystem`,
