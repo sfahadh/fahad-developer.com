@@ -14,7 +14,7 @@ class Header extends React.Component {
     
 	handleScroll = () => {
 		const { visibilityClass } = this.state;
-		if (window.pageYOffset > 50) {
+		if (window.pageYOffset > 50 || window.outerWidth < 768) {
 			if (visibilityClass !== 'navbar-shrink') {
 				this.setState({ visibilityClass: 'navbar-shrink' });
 			}
@@ -27,14 +27,16 @@ class Header extends React.Component {
 	
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
+		window.addEventListener('resize', this.handleScroll);
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
+		window.addEventListener('resize', this.handleScroll);
 	}
 
     render() {
-        const { visibilityClass } = this.state;
+		const { visibilityClass } = this.state;
 
 		return (
 			<Navbar expand="md" className={`fixed-top ${visibilityClass}`}>

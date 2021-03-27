@@ -3,36 +3,28 @@ A portfolio blog powered by Gatsby that displays personal projects that I've wor
 
 ## Features
 Some of the features that are included in this repository are:
-1. Smooth scroll
+1. Google Analytics
 2. Toggle Light/Dark mode
 3. Lazy loading
-4. Animated transition effect between pages
-5. Animated appearing letters
-6. Dynamically generated blogs
+4. Dynamically generated blogs
+5. Integration of Contentful
 
 ## Dependencies
 * Bootstrap/JQuery/Popper.js
 * Sass
-* Smoothscroll-polyfill
-* Typography
-
+* React Bootstrap
 ## Gatsby Plugins
-* gatsby-plugin-sass
+* gatsby-plugin-google-gtag
 * gatsby-plugin-dark-mode
-* gatsby-plugin-transition-link
-* gatsby-remark-copy-linked-files
-* gatsby-remark-smartypants
+* gatsby-plugin-react-helmet
+* gatsby-plugin-image
+* gatsby-plugin-sass
+* gatsby-source-filesystem
+* gatsby-source-contentful
 * gatsby-transformer-sharp
 * gatsby-plugin-sharp
-* gatsby-plugin-offline
-* gatsby-plugin-react-helmet
-* gatsby-plugin-typography
 * gatsby-plugin-manifest
-* gatsby-remark-prismjs
-* gatsby-remark-responsive-iframe
-* gatsby-remark-images
-* gatsby-transformer-remark
-* gatsby-source-filesystem
+* gatsby-plugin-gatsby-cloud
 
 ## Credits
 This repository would not look the way it does if it weren't for these sources. 
