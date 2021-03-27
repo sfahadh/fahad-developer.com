@@ -20,7 +20,7 @@ const PostBody = ({ content }) => {
             [BLOCKS.EMBEDDED_ASSET]: node => {
                 const asset = useContentfulImage(node.data.target.sys.id);
                 const image = getImage(asset.node);
-                return <GatsbyImage image={ image } alt={ asset.node.contentful_id } src="" />
+                return <GatsbyImage image={ image } alt={ asset.node.contentful_id } />
             },
             [BLOCKS.EMBEDDED_ENTRY]: (node) => {
                 const { __typename } = node.data.target;
