@@ -50,7 +50,7 @@ class Header extends React.Component {
 		return (
 			<Navbar expand="md" className={`fixed-top ${visibilityClass}`}>
                 <div className="container mainNav">
-                    <AniLink cover direction="down" bg="#8c61ff" to="/">
+					<AniLink cover direction="top" to="/" bg="#29a9f9">
                         <Link className="navbar-brand">Fahad Hussain</Link>
 					</AniLink>
 
