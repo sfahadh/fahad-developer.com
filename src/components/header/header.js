@@ -9,12 +9,21 @@ import "../../styles/header/header.scss";
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { visibilityClass: '' };
+		this.state = { visibilityClass: '', openMenu: 'not-active' };
     }
+
+	toggleMenu = () => {
+		const { openMenu } = this.state;
+		if (openMenu === "not-active") {
+			this.setState({ openMenu: 'active' });
+		} else {
+			this.setState({ openMenu: 'not-active' });
+		}
+	}
     
 	handleScroll = () => {
 		const { visibilityClass } = this.state;
-		if (window.pageYOffset > 50 || window.outerWidth < 768) {
+		if (window.pageYOffset > 425 || window.outerWidth < 768) {
 			if (visibilityClass !== 'navbar-shrink') {
 				this.setState({ visibilityClass: 'navbar-shrink' });
 			}
@@ -36,7 +45,7 @@ class Header extends React.Component {
 	}
 
     render() {
-		const { visibilityClass } = this.state;
+		const { visibilityClass, openMenu } = this.state;
 
 		return (
 			<Navbar expand="md" className={`fixed-top ${visibilityClass}`}>
@@ -45,7 +54,14 @@ class Header extends React.Component {
                         <Link to="/" className="navbar-brand">Fahad Hussain</Link>
 					{/* </AniLink> */}
 
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle"/>
+					<Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle">
+						<div className={`btn ${openMenu}`} onClick={ this.toggleMenu }>
+							<span className="line"></span>
+							<span className="line"></span>
+							<span className="line"></span>
+						</div>
+					</Navbar.Toggle>
+
                     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="navbar-items">
                             <Link to="/projects" className="nav-link">Projects</Link>

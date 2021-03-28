@@ -1,3 +1,4 @@
+@import "./hamburger";
 @import "../variables";
 @import "../functions";
 @import "../mixins";
@@ -18,10 +19,6 @@
 		}
 	}
 
-	.navbar-toggle {
-		border: 2px solid $primary;
-	}
-
 	#basic-navbar-nav {
 		.nav-link {
 			margin: 1rem;
@@ -37,6 +34,7 @@
 			margin-right: 2rem;
 		}
 	}
+	
 }
 
 .navbar-shrink {
