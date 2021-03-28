@@ -23,7 +23,7 @@ class Header extends React.Component {
     
 	handleScroll = () => {
 		const { visibilityClass } = this.state;
-		if (window.pageYOffset > 425 || window.outerWidth < 768) {
+		if (window.pageYOffset > 425 || window.outerWidth < 768 || window.location.pathname !== "/") {
 			if (visibilityClass !== 'navbar-shrink') {
 				this.setState({ visibilityClass: 'navbar-shrink' });
 			}
@@ -51,7 +51,7 @@ class Header extends React.Component {
 			<Navbar expand="md" className={`fixed-top ${visibilityClass}`}>
                 <div className="container mainNav">
 					<AniLink cover direction="top" to="/" bg="#29a9f9">
-                        <Link className="navbar-brand">Fahad Hussain</Link>
+                        <h3 className="navbar-brand">Fahad Hussain</h3>
 					</AniLink>
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle">
