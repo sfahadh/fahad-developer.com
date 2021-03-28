@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import PropTypes from 'prop-types';
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Toggle from "./toggle";
 import { Link } from "gatsby";
 import "../../styles/header/header.scss";
@@ -50,9 +50,9 @@ class Header extends React.Component {
 		return (
 			<Navbar expand="md" className={`fixed-top ${visibilityClass}`}>
                 <div className="container mainNav">
-                    {/* <AniLink cover direction="down" bg="#8c61ff" to="/" className="navbar-brand"> */}
-                        <Link to="/" className="navbar-brand">Fahad Hussain</Link>
-					{/* </AniLink> */}
+                    <AniLink cover direction="down" bg="#8c61ff" to="/">
+                        <Link className="navbar-brand">Fahad Hussain</Link>
+					</AniLink>
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle">
 						<div className={`btn ${openMenu}`} onClick={ this.toggleMenu }>
