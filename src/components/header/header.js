@@ -19,8 +19,6 @@ class Header extends React.Component {
 		} else {
 			this.setState({ openMenu: 'not-active' });
 		}
-
-		console.log(openMenu);
 	}
     
 	handleScroll = () => {
@@ -57,12 +55,10 @@ class Header extends React.Component {
 					{/* </AniLink> */}
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle">
-						<div className="box">
-							<div className={`btn ${openMenu}`} onClick={ this.toggleMenu }>
-								<span className="line"></span>
-								<span className="line"></span>
-								<span className="line"></span>
-							</div>
+						<div className={`btn ${openMenu}`} onClick={ this.toggleMenu }>
+							<span className="line"></span>
+							<span className="line"></span>
+							<span className="line"></span>
 						</div>
 					</Navbar.Toggle>
 
