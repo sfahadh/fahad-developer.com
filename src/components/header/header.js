@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import PropTypes from 'prop-types';
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Toggle from "./toggle";
 import { Link } from "gatsby";
 import "../../styles/header/header.scss";
@@ -23,7 +23,7 @@ class Header extends React.Component {
     
 	handleScroll = () => {
 		const { visibilityClass } = this.state;
-		if (window.pageYOffset > 425 || window.outerWidth < 768) {
+		if (window.pageYOffset > 425 || window.outerWidth < 768 || window.location.pathname !== "/") {
 			if (visibilityClass !== 'navbar-shrink') {
 				this.setState({ visibilityClass: 'navbar-shrink' });
 			}
@@ -50,9 +50,9 @@ class Header extends React.Component {
 		return (
 			<Navbar expand="md" className={`fixed-top ${visibilityClass}`}>
                 <div className="container mainNav">
-                    {/* <AniLink cover direction="down" bg="#8c61ff" to="/" className="navbar-brand"> */}
-                        <Link to="/" className="navbar-brand">Fahad Hussain</Link>
-					{/* </AniLink> */}
+					<AniLink cover direction="top" to="/" bg="#29a9f9">
+                        <h3 className="navbar-brand">Fahad Hussain</h3>
+					</AniLink>
 
 					<Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle">
 						<div className={`btn ${openMenu}`} onClick={ this.toggleMenu }>
