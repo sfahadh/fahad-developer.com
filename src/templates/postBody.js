@@ -12,8 +12,7 @@ const PostBody = ({ content }) => {
     const Text = ({ children }) => <p className="align-center">{ children }</p>;
     
     function code(text) {
-        console.log(text);
-        if (text) {
+        try {
             const language = text.shift();
         
             const value = text.reduce((acc, cur) => {
@@ -29,8 +28,8 @@ const PostBody = ({ content }) => {
                     {value}
                 </SyntaxHighlighter>
             );
-        } else {
-            return "";
+        } catch (error) {
+            console.log(error);
         }
     }
 
