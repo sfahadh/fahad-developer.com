@@ -1,7 +1,6 @@
 import React from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { tomorrow } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { PrismAsync as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { useContentfulImage } from "../utils/useContentfulImage";
@@ -13,19 +12,13 @@ const PostBody = ({ content }) => {
     
     function code(text) {
         try {
-            const language = text.shift();
-        
             const value = text.reduce((acc, cur) => {
-            if (typeof cur !== "string" && cur.type === "br") {
-                return acc + "\n";
-            }
-        
-            return acc + cur;
+                return typeof cur !== "string" && cur.type === "br" ? acc + "\n" : acc + cur
             }, "");
         
             return (
-                <SyntaxHighlighter language={language} style={obsidian}>
-                    {value}
+                <SyntaxHighlighter language="javascript" style={ vscDarkPlus }>
+                    { value }
                 </SyntaxHighlighter>
             );
         } catch (error) {
@@ -35,7 +28,7 @@ const PostBody = ({ content }) => {
 
     const options = {
         renderMark: {
-            [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+            [MARKS.BOLD]: text => <Bold>{ text }</Bold>,
             [MARKS.CODE]: code,
         },
 
@@ -51,7 +44,7 @@ const PostBody = ({ content }) => {
 
         renderText: (text) => {
             return text.split("\n").reduce((children, textSegment, index) => {
-              return [...children, index > 0 ? <br key={index} /> : "", textSegment];
+                return [...children, index > 0 ? <br key={index} /> : "", textSegment];
             }, []);
         },
     };
