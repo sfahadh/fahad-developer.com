@@ -1,7 +1,6 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { Link } from "gatsby";
 import BlogFooter from "./_blogFooter";
 import "../../styles/main/blog.scss";
 

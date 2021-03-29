@@ -1,4 +1,6 @@
 import React from "react";
+import { PrismAsync as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { useContentfulImage } from "../utils/useContentfulImage";
@@ -7,38 +9,44 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const PostBody = ({ content }) => {
     const Bold = ({ children }) => <p className="bold">{ children }</p>;
     const Text = ({ children }) => <p className="align-center">{ children }</p>;
+    
+    function code(text) {
+        try {
+            const value = text.reduce((acc, cur) => {
+                return typeof cur !== "string" && cur.type === "br" ? acc + "\n" : acc + cur
+            }, "");
+        
+            return (
+                <SyntaxHighlighter language="javascript" style={ vscDarkPlus }>
+                    { value }
+                </SyntaxHighlighter>
+            );
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const options = {
         renderMark: {
             [MARKS.BOLD]: text => <Bold>{ text }</Bold>,
+            [MARKS.CODE]: code,
         },
 
         renderNode: {
             [BLOCKS.HEADING_2]: (node, children) => <h2>{ children }</h2>,
             [BLOCKS.HEADING_4]: (node, children) => <h4>{ children }</h4>,
-            [BLOCKS.PARAGRAPH]: (node, children) => <Text>{ children }</Text>,
             [BLOCKS.EMBEDDED_ASSET]: node => {
                 const asset = useContentfulImage(node.data.target.sys.id);
                 const image = getImage(asset.node);
                 return <GatsbyImage image={ image } alt={ asset.node.contentful_id } />
-            },
-            [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-                const { __typename } = node.data.target;
-                switch (__typename) {
-                    case "ContentfulCodeBlock":
-                        const { language, code } = node.data.target;
-                        return (
-                            <pre className={ language }>
-                                <code>{ code }</code>
-                            </pre>
-                        )
-                    default:
-                        return null;
-                }   
             }
         },
 
-        renderText: text => text.split("\n").flatMap((text, i) => [i > 0 && <br />, text])
+        renderText: (text) => {
+            return text.split("\n").reduce((children, textSegment, index) => {
+                return [...children, index > 0 ? <br key={index} /> : "", textSegment];
+            }, []);
+        },
     };
 
     return (

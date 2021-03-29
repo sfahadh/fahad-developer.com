@@ -2,7 +2,7 @@
 @import "./variables";
 
 .pages-container {
-	margin-top: 200px;
+	margin-top: 180px;
 }
 
 .blog-list, .project-list {
@@ -38,6 +38,10 @@ hr {
 }
 
 @media (max-width: 576px) {
+	.pages-container {
+		margin-top: 140px;
+	}
+
 	.post {
 		header {
 			width: 100%;
