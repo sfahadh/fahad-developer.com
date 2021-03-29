@@ -42,33 +42,10 @@ const PostBody = ({ content }) => {
         renderNode: {
             [BLOCKS.HEADING_2]: (node, children) => <h2>{ children }</h2>,
             [BLOCKS.HEADING_4]: (node, children) => <h4>{ children }</h4>,
-            [BLOCKS.PARAGRAPH]: (node, children) => {
-                if (
-                    node.content.length === 1 &&
-                    find(node.content[0].marks, { type: 'code' })
-                ) {
-                    return <pre><code>{node.content[0].value}</code></pre>;
-                }
-                return <p>{children}</p>;
-            },
             [BLOCKS.EMBEDDED_ASSET]: node => {
                 const asset = useContentfulImage(node.data.target.sys.id);
                 const image = getImage(asset.node);
                 return <GatsbyImage image={ image } alt={ asset.node.contentful_id } />
-            },
-            [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-                const { __typename } = node.data.target;
-                switch (__typename) {
-                    case "ContentfulCodeBlock":
-                        const { language, code } = node.data.target;
-                        return (
-                            <pre className={ language }>
-                                <code>{ code }</code>
-                            </pre>
-                        )
-                    default:
-                        return null;
-                }   
             }
         },
 
