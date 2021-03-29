@@ -10,7 +10,8 @@ const PostBody = ({ content }) => {
 
     const options = {
         renderMark: {
-            [MARKS.BOLD]: text => <Bold>{ text }</Bold>,
+            [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+            [MARKS.CODE]: (text) => text
         },
 
         renderNode: {

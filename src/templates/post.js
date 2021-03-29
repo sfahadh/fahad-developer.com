@@ -15,7 +15,7 @@ const Post = ({ data }) => {
                     <header>
                         { post.tags ? (
                                 <div className="tags">
-                                    { post.tags.map(tag => <span key={tag + `tag`}>{tag}</span>) }
+                                    { post.tags.map(tag => <span key={ tag + `${tag}` }>{ tag }</span>) }
                                 </div>
                         ) : null }
 
