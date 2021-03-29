@@ -16,7 +16,7 @@ const Project = ({ projects }) => {
                             return (
                                 <div key={ node.name } className="project-card mb-5">
                                     <div className="projectImg">
-                                        <GatsbyImage image={image} alt={node.name} />
+                                        <GatsbyImage image={ image } alt={ node.name } />
                                     </div>
 
                                     <div className="content">
@@ -55,12 +55,12 @@ const Project = ({ projects }) => {
 
                         <div className="d-flex">
                             <GoMarkGithub className="mr-2 mt-1" />
-                            <a href="https://github.com/sfahadh" target="_blank" rel="noreferrer">Source Code</a>
+                            <a href="https://github.com/sfahadh/Breaking-Brick" target="_blank" rel="noreferrer">Source Code</a>
                         </div>
 
                         <div className="d-flex">
                             <FiLink className="mr-2 mt-1" />
-                            <a href="https://github.com/sfahadh" target="_blank" rel="noreferrer">Live Site</a>
+                            <a href="http://fahad-breaking-bricks.surge.sh/" target="_blank" rel="noreferrer">Live Site</a>
                         </div> 
                     </div>
                 </div>
