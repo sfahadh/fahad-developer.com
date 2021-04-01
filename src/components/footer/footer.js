@@ -13,7 +13,7 @@ const Footer = () => {
 
                 <div className="footer-links">
                     <a
-                        href="https://fahad-developer.com/"
+                        href="https://fahad-developer.com/blogs"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -23,11 +23,11 @@ const Footer = () => {
                     &bull;{" "}{" "}
 
                     <a
-                        href="https://fahad-developer.com/"
+                        href="https://fahad-portfolio.netlify.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Portfolio
+                        Old Portfolio
                     </a>
                     
                     &bull;{" "}{" "}
