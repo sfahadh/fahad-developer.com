@@ -4,9 +4,17 @@ require("dotenv").config({
 
 module.exports = {
 	siteMetadata: {
-		title: `Portfolio Blog`,
-		description: `A portfolio of my work and blogs I've written`,
+		title: `Fahad Hussain`,
+		description: `A portfolio of my work and blogs I've written using Gatsby, Contentful, and Sass. 
+			It displays completed Javascript projects and blogs written about Gatsby, Javascript, and Algorithms & Data Structures`,
 		author: `Fahad Hussain`,
+		siteUrl: `https://fahad-developer.com/`,
+		socialLinks: {
+			linkedIn: `https://www.linkedin.com/in/fahad-hussain23/`,
+			github: `https://github.com/sfahadh`
+		},
+		email: `sfahadh14@gmail.com`,
+		address: `New York, NY`
 	},
 
 	plugins: [
