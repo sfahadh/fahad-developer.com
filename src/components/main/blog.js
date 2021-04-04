@@ -10,7 +10,9 @@ const Blogs = ({ blogs }) => {
             <div className="container">
                 <div className="row blog-list">
                     { blogs.map(({ node }) => {
+                        console.log(node);
                         const image = getImage(node.thumbnail);
+
                         return (
                             <article key={node.slug} className="col-lg-4 col-md-6 mb-5">
                                 <GatsbyImage image={ image } alt={ node.title } />

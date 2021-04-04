@@ -31,18 +31,24 @@ const SEO = ({ title, description, keywords, image, meta }) => {
 			htmlAttributes={{ lang: `en` }}
 			title={ title }
 			titleTemplate={ defaultTitle ? `%s | ${defaultTitle}` : null }
-			meta={[
+			meta={ [
 				{ name: `description`, content: metaDescription },
 				{ name: `keywords`, content: metaKeywords },
 				{ property: `og:title`, content: title },
 				{ property: `og:description`, content: metaDescription },
-				{ property: `og:image`, content: metaImage },
 				{ property: `og:type`, content: `website` },
 				{ name: `twitter:card`, content: `summary` },
 				{ name: `twitter:creator`, content: site.siteMetadata?.author || `` },
 				{ name: `twitter:title`, content: title },
 				{ name: `twitter:description`, content: metaDescription },
-			].concat(meta)}
+			].concat(
+				metaImage ? [
+					{ property: "og:image", content: image },
+					{ name: "twitter:card", content: "summary_large_image" }
+				] : [
+					{ name: "twitter:card", content: "summary" }
+				]
+			).concat(meta) }
 		/>
 	)
 }
