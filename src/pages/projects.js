@@ -10,13 +10,18 @@ const Projects = props => {
 	const projects = props.data.allContentfulProject.edges;
 	const content = {
 		header: "Projects",
-		description: "A list of all projects I've created",
+		description: "A list of all the projects I've created",
 		type: "PROJECTS"
 	}
 
 	return (
-		<Layout location={props.location}>
-			<SEO title="Projects" />
+		<Layout location={ props.location }>
+			<SEO
+				title={ content.header }
+				description={ `${content.description}. Projects that are based on a variety of tech stacks 
+					including but not limited to Javascript, React, Ruby on Rails and PostgreSQL` }
+			/>
+			
 			<div className="pages-container">
 				<div className="container">
 					<Bio numOfContent={ projects.length } content={ content } />
