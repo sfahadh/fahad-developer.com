@@ -3,10 +3,10 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
 import Project from "../components/main/project";
+import SEO from "../components/seo";
 import "../styles/pages.scss";
 
 const Projects = props => {
-	const siteTitle = props.data.site.siteMetadata.title;
 	const projects = props.data.allContentfulProject.edges;
 	const content = {
 		header: "Projects",
@@ -15,7 +15,8 @@ const Projects = props => {
 	}
 
 	return (
-		<Layout location={ props.location }>
+		<Layout location={props.location}>
+			<SEO title="Projects" />
 			<div className="pages-container">
 				<div className="container">
 					<Bio numOfContent={ projects.length } content={ content } />
@@ -34,12 +35,6 @@ export default Projects;
 
 export const pageQuery = graphql`
 	query {
-		site {
-			siteMetadata {
-				title
-			}
-		}
-
 		allContentfulProject {
 			edges {
 				node {

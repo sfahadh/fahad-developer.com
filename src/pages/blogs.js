@@ -7,7 +7,6 @@ import SEO from "../components/seo";
 import "../styles/pages.scss";
 
 const Blogs = props => {
-	const siteTitle = props.data.site.siteMetadata.title;
 	const blogs = props.data.allContentfulBlogPost.edges;
 	const content = {
 		header: "Blogs",
@@ -36,12 +35,6 @@ export default Blogs;
 
 export const pageQuery = graphql`
 	query {
-		site {
-			siteMetadata {
-				title
-			}
-		}
-
 		allContentfulBlogPost(sort: {fields: published, order: DESC}) {
 			edges {
 				node {
