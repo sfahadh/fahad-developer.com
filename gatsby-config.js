@@ -24,6 +24,7 @@ module.exports = {
 		},
 		email: `sfahadh14@gmail.com`,
 		address: `New York, NY`,
+		image: `${__dirname}/src/images/landing-page.png`,
 		keywords: ["Gatsby", "Sass", "Contentful", "Headless CMS", "Netlify", "Portfolio", "Blog"]
 	},
 

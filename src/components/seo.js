@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO = ({ title, description, keywords, meta }) => {
+const SEO = ({ title, description, keywords, image, meta }) => {
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -14,6 +14,7 @@ const SEO = ({ title, description, keywords, meta }) => {
 						author
 						siteUrl
 						keywords
+						image
 					}
 				}
 			}
@@ -22,6 +23,7 @@ const SEO = ({ title, description, keywords, meta }) => {
 
 	const metaDescription = description || site.siteMetadata.description;
 	const metaKeywords = keywords || site.siteMetadata.keywords;
+	const metaImage = image || site.siteMetadata.image;
 	const defaultTitle = site.siteMetadata?.title;
 
 	return (
@@ -34,6 +36,7 @@ const SEO = ({ title, description, keywords, meta }) => {
 				{ name: `keywords`, content: metaKeywords },
 				{ property: `og:title`, content: title },
 				{ property: `og:description`, content: metaDescription },
+				{ property: `og:image`, content: metaImage },
 				{ property: `og:type`, content: `website` },
 				{ name: `twitter:card`, content: `summary` },
 				{ name: `twitter:creator`, content: site.siteMetadata?.author || `` },
@@ -46,6 +49,7 @@ const SEO = ({ title, description, keywords, meta }) => {
 
 SEO.defaultProps = {
 	description: ``,
+	keywords: [],
 	meta: [],
 }
 
@@ -53,6 +57,8 @@ SEO.propTypes = {
 	title: PropTypes.string.isRequired,
 	description: PropTypes.string,
 	lang: PropTypes.string,
+	keywords: PropTypes.arrayOf(PropTypes.string),
+	image: PropTypes.string,
 	meta: PropTypes.arrayOf(PropTypes.object),
 }
 
