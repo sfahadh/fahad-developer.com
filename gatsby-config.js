@@ -7,7 +7,7 @@ const {
 	URL: NETLIFY_SITE_URL = 'https://fahad-developer.com/',
 	DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
 	CONTEXT: NETLIFY_ENV = NODE_ENV
-  } = process.env;
+} = process.env;
 const isNetlifyProduction = NETLIFY_ENV === 'production';
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
@@ -17,13 +17,14 @@ module.exports = {
 		description: `A portfolio of my work and blogs I've written using Gatsby, Contentful, and Sass. 
 			It displays completed Javascript projects and blogs written about Gatsby, Javascript, and Algorithms & Data Structures`,
 		author: `Fahad Hussain`,
-		siteUrl: `https://fahad-developer.com/`,
+		siteUrl: siteUrl,
 		socialLinks: {
 			linkedIn: `https://www.linkedin.com/in/fahad-hussain23/`,
 			github: `https://github.com/sfahadh`
 		},
 		email: `sfahadh14@gmail.com`,
-		address: `New York, NY`
+		address: `New York, NY`,
+		keywords: ["Gatsby", "Sass", "Contentful", "Headless CMS", "Netlify", "Portfolio", "Blog"]
 	},
 
 	plugins: [
