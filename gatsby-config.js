@@ -2,11 +2,30 @@ require("dotenv").config({
   	path: `.env.${process.env.NODE_ENV}`,
 });
 
+const {
+	NODE_ENV,
+	URL: NETLIFY_SITE_URL = 'https://fahad-developer.com/',
+	DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+	CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
 	siteMetadata: {
-		title: `Portfolio Blog`,
-		description: `A portfolio of my work and blogs I've written`,
+		title: `Fahad Hussain`,
+		description: `A portfolio of my work and blogs I've written using Gatsby, Contentful, and Sass. 
+			It displays completed Javascript projects and blogs written about Gatsby, Javascript, and Algorithms & Data Structures`,
 		author: `Fahad Hussain`,
+		siteUrl: siteUrl,
+		socialLinks: {
+			linkedIn: `https://www.linkedin.com/in/fahad-hussain23/`,
+			github: `https://github.com/sfahadh`
+		},
+		email: `sfahadh14@gmail.com`,
+		address: `New York, NY`,
+		image: `${__dirname}/src/images/landing-page.png`,
+		keywords: ["Gatsby", "Sass", "Contentful", "Headless CMS", "Netlify", "Portfolio", "Blog"]
 	},
 
 	plugins: [
@@ -24,6 +43,7 @@ module.exports = {
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sass`,
 		`gatsby-plugin-transition-link`,
+		`gatsby-plugin-sitemap`,
 		
 		{
 			resolve: `gatsby-source-filesystem`,
@@ -40,6 +60,30 @@ module.exports = {
 				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 				downloadLocal: true
 			},
+		},
+
+		{
+			resolve: 'gatsby-plugin-robots-txt',
+			options: {
+				resolveEnv: () => NETLIFY_ENV,
+				env: {
+					production: {
+						policy: [{ userAgent: '*' }]
+					},
+
+					'branch-deploy': {
+						policy: [{ userAgent: '*', disallow: ['/'] }],
+						sitemap: null,
+						host: null
+					},
+					
+					'deploy-preview': {
+						policy: [{ userAgent: '*', disallow: ['/'] }],
+						sitemap: null,
+						host: null
+					}
+				}
+			}
 		},
 
 		`gatsby-transformer-sharp`,

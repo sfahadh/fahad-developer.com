@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import BlogFooter from "../components/main/_blogFooter";
 import PostBody from "./postBody";
+import SEO from "../components/seo";
 import "../styles/template.scss";
 
 const Post = ({ data }) => {
@@ -10,6 +11,13 @@ const Post = ({ data }) => {
 
     return (
         <Layout>
+            <SEO
+                title={ post.title }
+                description={ post.synopsis.synopsis }
+                keywords={ post.keywords }
+                image={ post.thumbnail.gatsbyImageData.images.fallback.src }
+            />
+
             <article className="pages-container">
                 <div className="container-md post">
                     <header>
@@ -46,6 +54,9 @@ export const pageQuery = graphql`
             }
             body {
                 raw
+            }
+            thumbnail {
+                gatsbyImageData
             }
         }
     }

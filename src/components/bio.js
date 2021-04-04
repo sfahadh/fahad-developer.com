@@ -13,7 +13,7 @@ const Bio = ({ numOfContent, content }) => {
 			  	<h1>{ content.header }</h1>
 				<p>{ content.description }</p>
 			  
-			  <ul>
+			  	<ul>
 			 		<h5>NEW YORK</h5>
 				  	<h6 className="bullet ml-2 mr-2">•</h6>
 				  	<h5>{ numOfContent } { content.type }</h5>
