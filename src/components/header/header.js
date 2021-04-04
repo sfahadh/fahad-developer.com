@@ -7,8 +7,8 @@ import { Link } from "gatsby";
 import "../../styles/header/header.scss";
 
 class Header extends React.Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = { visibilityClass: '', openMenu: 'not-active' };
     }
 

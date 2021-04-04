@@ -3,19 +3,25 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Bio from "../components/bio";
 import Project from "../components/main/project";
+import SEO from "../components/seo";
 import "../styles/pages.scss";
 
 const Projects = props => {
-	const siteTitle = props.data.site.siteMetadata.title;
 	const projects = props.data.allContentfulProject.edges;
 	const content = {
 		header: "Projects",
-		description: "A list of all projects I've created",
+		description: "A list of all the projects I've created",
 		type: "PROJECTS"
 	}
 
 	return (
-		<Layout location={ props.location } title={ siteTitle }>
+		<Layout location={ props.location }>
+			<SEO
+				title={ content.header }
+				description={ `${content.description}. Projects that are based on a variety of tech stacks 
+					including but not limited to Javascript, React, Ruby on Rails and PostgreSQL` }
+			/>
+			
 			<div className="pages-container">
 				<div className="container">
 					<Bio numOfContent={ projects.length } content={ content } />
@@ -34,12 +40,6 @@ export default Projects;
 
 export const pageQuery = graphql`
 	query {
-		site {
-			siteMetadata {
-				title
-			}
-		}
-
 		allContentfulProject {
 			edges {
 				node {
