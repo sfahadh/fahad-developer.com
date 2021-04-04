@@ -21,10 +21,10 @@ const SEO = ({ title, description, keywords, image, meta }) => {
 		`
 	)
 
+	const defaultTitle = site.siteMetadata?.title;
 	const metaDescription = description || site.siteMetadata.description;
 	const metaKeywords = keywords || site.siteMetadata.keywords;
 	const metaImage = image || site.siteMetadata.image;
-	const defaultTitle = site.siteMetadata?.title;
 
 	return (
 		<Helmet
