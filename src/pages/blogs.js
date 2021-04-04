@@ -16,7 +16,7 @@ const Blogs = props => {
 	}
 	
 	return (
-		<Layout location={props.location} title={siteTitle}>
+		<Layout location={ props.location }>
 			<SEO title="Blogs" />
 			<div className="pages-container">
 				<div className="container">

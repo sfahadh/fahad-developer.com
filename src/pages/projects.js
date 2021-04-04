@@ -15,7 +15,7 @@ const Projects = props => {
 	}
 
 	return (
-		<Layout location={ props.location } title={ siteTitle }>
+		<Layout location={ props.location }>
 			<div className="pages-container">
 				<div className="container">
 					<Bio numOfContent={ projects.length } content={ content } />
