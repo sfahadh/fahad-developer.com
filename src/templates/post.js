@@ -8,14 +8,12 @@ import "../styles/template.scss";
 
 const Post = ({ data }) => {
     const post = data.contentfulBlogPost;
-
     return (
         <Layout>
             <SEO
                 title={ post.title }
                 description={ post.synopsis.synopsis }
                 keywords={ post.keywords }
-                image={ post.thumbnail.gatsbyImageData.images.fallback.src }
             />
 
             <article className="pages-container">
