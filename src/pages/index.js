@@ -6,6 +6,7 @@ import About from "../components/main/about";
 import Project from "../components/main/project";
 import Blog from "../components/main/blog";
 import Seo from "../components/seo";
+import "../styles/global.scss";
 
 const IndexPage = props => (
 	<Layout>
