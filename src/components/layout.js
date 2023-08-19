@@ -1,7 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import Header from "./header/header";
-import Footer from "./footer/footer";
+import Header from "./header";
+import Footer from "./footer";
 import "../styles/global.scss";
 
 const Layout = ({ children }) => (

@@ -1,6 +1,4 @@
 import React from "react";
-import { VscTrash } from "react-icons/vsc";
-import { GiMuscleFat } from "react-icons/gi";
 import { StaticImage } from "gatsby-plugin-image";
 import "../../styles/main/about.scss";
 
@@ -10,10 +8,10 @@ const About = () => {
       <div className="container-sm aboutMe">
         <div className="details">
           <h1 className="mb-3">about me</h1>
-          <h3 className="mb-3">An engineer who likes to eat, sleep & lift <GiMuscleFat /></h3>
+          <h3 className="mb-3">An engineer who likes to eat, sleep & lift</h3>
           <p>
               Transitioned from a career of a Personal Trainer in pursuit of becoming a Physical
-              Therapist to a software engineer. Treat me to lunch (coffee is <VscTrash />) and
+              Therapist to a software engineer. Treat me to lunch (coffee is) and
               I'll tell you more
           </p>
         </div>

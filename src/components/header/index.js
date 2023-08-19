@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import PropTypes from 'prop-types';
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Toggle from "./toggle";
 import debounce from "lodash.debounce";
 import { Link } from "gatsby";
@@ -44,9 +43,7 @@ const Header = () => {
   return (
 		<Navbar expand="md" className={`fixed-top ${visibilityClass}`}>
 			<div className="container mainNav">
-				<AniLink cover direction="top" to="/" bg="#29a9f9">
-					<h3 className="navbar-brand">Fahad Hussain</h3>
-				</AniLink>
+				<h3 className="navbar-brand">Fahad Hussain</h3>
 
 				<Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle">
 					<div className={`btn ${openMenu}`} onClick={ toggleMenu } onKeyDown={ toggleMenu } role="button" tabIndex={0}>

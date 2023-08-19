@@ -1,8 +1,9 @@
 import React from "react";
 import ProjectCard from "./main/_projectCard";
-import "../../styles/main/project.scss"
+import "../styles/bio.scss"
 
 const Project = ({ projects }) => {
+  if (!projects) return null
   return (
     <section className="project-container">
       { projects.length ? 
