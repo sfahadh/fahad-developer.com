@@ -1,0 +1,281 @@
+@import "../variables";
+@import "../mixins";
+
+.egg {
+  @include layers(245px, 180px, var(--eggBody));
+  box-shadow: 0px 0px 20px var(--eggBody);
+
+.face {
+  width: $eggFace;
+  height: $eggFace;
+  border-radius: 100%;
+  background: var(--yolk);
+  position: absolute;
+  left: 35%;
+  top: 11%;
+  box-shadow: inset 10px 1px 0 #ffcc24;
+
+  .eyes {
+    position: relative;
+    width: $eyeRadius;
+    height: $eyeRadius;
+    background: $eyes;
+    border-radius: 100%;
+    left: 35px;
+    top: 58px;
+    animation: eye-blink 2s infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: $eyeRadius;
+      height: $eyeRadius;
+      background: $eyes;
+      border-radius: 100%;
+      left: 60px;
+    }
+  }
+
+    .smile {
+      position: relative;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      width: 10px;
+      height: 6px;
+      background: transparent;
+      border: 5px solid #000;
+      left: 63px;
+      top: 55px;
+
+      &::before {
+        background: var(--yolk);
+        width: 30px;
+        height: 7px;
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: -5.5px;
+      }
+    }
+
+    .cheeks {
+      position: relative;
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      background: $cheeks;
+      left: 25px;
+      top: 42px;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        background: $cheeks;
+        left: 83px;
+      }
+    }
+
+    .shine {
+      position: relative;
+      width: 8px;
+      height: 20px;
+      border-radius: 200px;
+      background: #fff;
+      left: 110px;
+      top: -20px;
+      transform: rotate(-35deg);
+
+      &::before {
+          content: "";
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          background: #fff;
+          border-radius: 100%;
+          top: -12px;
+          right: 2px;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    border-radius: 200px;
+    width: 80px;
+    height: 25.7px;
+  }
+
+  li:nth-child(odd) {
+    background: var(--eggBody);
+  }
+
+  li:nth-child(even) {
+    background: #0071db;
+  }
+
+  li:nth-child(1) {
+    right: 40px;
+    animation: trail1 1s ease-out infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      opacity: 0;
+      width: 25.7px;
+      height: 25.7px;
+      background: var(--eggBody);
+      box-shadow: 0px 0px 10px var(--eggBody);
+      border-radius: 100%;
+      animation: floating 1.5s ease infinite;
+    }
+  }
+
+  li:nth-child(2) {
+    right: 30px;
+    animation: trail2 1s ease-out infinite;
+  }
+
+  li:nth-child(3) {
+    right: 70px;
+    animation: trail2 2s ease-out infinite;
+  }
+
+  li:nth-child(4) {
+    right: 60px;
+    animation: trail1 0.9s ease-out infinite;
+  }
+
+  li:nth-child(5) {
+    right: 40px;
+    animation: trail1 0.9s ease-out infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      opacity: 0;
+      width: 25.7px;
+      height: 25.7px;
+      background: var(--eggBody);
+      box-shadow: 0px 0px 10px var(--eggBody);
+      border-radius: 100%;
+      animation: floating2 1s ease infinite 2s;
+    }
+  }
+
+  li:nth-child(6) {
+    right: 20px;
+    animation: trail2 1s ease-out infinite;
+  }
+
+  li:nth-child(7) {
+    right: 10px;
+    animation: trail1 1s ease-out infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      opacity: 0;
+      width: 25.7px;
+      height: 25.7px;
+      background: var(--eggBody);
+      box-shadow: 0px 0px 10px var(--eggBody);
+      border-radius: 100%;
+      animation: floating3 1s ease infinite 0.5s;
+    }
+  }
+}
+
+@keyframes eye-blink {
+  0% { transform: scaleY(1); }
+  18% { transform: scaleY(1); }
+  20% { transform: scaleY(0); }
+  25% { transform: scaleY(1); }
+  38% { transform: scaleY(1); }
+  40% { transform: scaleY(0); }
+  45% { transform: scaleY(1); }
+  80% { transform: scaleY(1); }
+}
+
+@keyframes trail1 {
+  50% { right: 50px; }
+}
+
+@keyframes trail2 {
+  50% { right: 10px; }
+}
+
+@keyframes trail3 {
+  50% { right: 80px; }
+}
+
+@keyframes trail4 {
+  50% { right: 50px; }
+}
+
+@keyframes trail5 {
+  50% { right: 20px; }
+}
+
+@keyframes trail6 {
+  50% { right: 70px; }
+}
+
+@keyframes floating {
+  0% {
+    right: 50px;
+    opacity: 0;
+  }
+  50% {
+    right: 160px;
+    opacity: 1;
+  }
+  70% {
+    right: 160px;
+    opacity: 0;
+  }
+  100% {
+    right: 50px;
+    opacity: 0;
+  }
+}
+
+@keyframes floating2 {
+  0% {
+    right: 50px;
+    opacity: 0;
+  }
+  50% {
+    right: 100px;
+    opacity: 1;
+  }
+  70% {
+    right: 100px;
+    opacity: 0;
+  }
+  100% {
+    right: 50px;
+    opacity: 0;
+  }
+}
+
+@keyframes floating3 {
+  0% {
+    right: 0px;
+    opacity: 0;
+  }
+  50% {
+    right: 150px;
+    opacity: 1;
+  }
+  70% {
+    right: 150px;
+    opacity: 0;
+  }
+  100% {
+    right: 0px;
+    opacity: 0;
+  }
+}

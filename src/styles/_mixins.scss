@@ -1,0 +1,19 @@
+@import "./variables";
+
+// egg body and light trails
+@mixin layers($layerWidth, $layerHeight, $color) {
+  width: $layerWidth;
+  height: $layerHeight;
+  border-radius: 0px 100px 100px 0px;
+  background: $color;
+  position: relative;
+  right: 20px;
+}
+
+@mixin star-template($radius, $top, $delay) {
+  width: $radius;
+  height: $radius;
+  border-radius: 100%;
+  top: $top;
+  animation-delay: $delay;
+}

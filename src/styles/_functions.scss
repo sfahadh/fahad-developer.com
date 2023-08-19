@@ -1,0 +1,27 @@
+@import "./variables";
+
+@function weight($weight-name) {
+  @return map-get($map: $weights, $key: $weight-name);
+}
+
+@function header($font-size) {
+  @return map-get($map: $header-sizes, $key: $font-size);
+}
+
+@function subHeader($font-size) {
+  @return map-get($map: $sub-header-sizes, $key: $font-size);
+}
+
+@function description($font-size) {
+  @return map-get($map: $description, $key: $font-size);
+}
+
+@function multiple-box-shadow ($n) {
+	$value: '#{random(2000)}px #{random(2000)}px #FFF';
+
+	@for $i from 2 through $n {
+			$value: '#{$value}, #{random(2000)}px #{random(2000)}px #FFF';
+	}
+
+	@return unquote($value);
+}

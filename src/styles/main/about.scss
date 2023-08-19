@@ -1,0 +1,78 @@
+@import "../functions";
+
+.about-container {
+	margin-top: 11vh;
+	margin-bottom: 2rem;
+}
+
+.aboutMe {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.details {
+		flex: 0.4;
+
+		h1 {
+			font-size: header(large);
+			text-decoration: underline;
+		}
+
+		h3 {
+			font-size: subHeader(large);
+		}
+
+		p {
+			font-size: description(large);
+		}
+	}
+	
+	.thumbnail {
+		flex: 0.6;
+	}
+}
+
+@media (max-width: 991px) {
+	.aboutMe {
+		flex-direction: column;
+
+		.details {
+			margin-bottom: 2rem;
+
+			h1, h3, p {
+				text-align: center;
+			}
+		}
+
+		.thumbnail {
+			width: 90%;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.about-container {
+		margin-top: 7vh;
+		margin-bottom: 2rem;
+	}
+
+	.aboutMe {
+		.details {
+			h1 {
+				font-size: header(medium);
+			}
+
+			h3 {
+				font-size: subHeader(medium);
+			}
+	
+			p {
+				font-size: description(medium);
+			}
+		}
+
+		.thumbnail {
+			width: 100%;
+		}
+	}
+}

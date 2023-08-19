@@ -1,0 +1,54 @@
+@import "./functions";
+@import "./variables";
+
+.pages-container {
+	margin-top: 180px;
+}
+
+.blog-list, .project-list {
+	margin-top: 5rem;
+}
+
+hr {
+	border: 1px solid $primary;
+}
+
+.post {
+	header {
+		width: 75%;
+		margin: auto;
+		margin-bottom: 50px;
+	}
+
+	h1 {
+		font-size: header(large);
+	}
+}
+
+@media (max-width: 992px) {
+	.post {
+		header {
+			width: 90%;
+		}
+
+		h1 {
+			font-size: calc(#{header(medium)} + 5px);
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.pages-container {
+		margin-top: 140px;
+	}
+
+	.post {
+		header {
+			width: 100%;
+		}
+
+		h1 {
+			font-size: calc(#{header(small)} + 7px);
+		}
+	}
+}

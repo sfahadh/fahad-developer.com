@@ -1,0 +1,65 @@
+@import "../functions";
+@import "./rocket";
+@import "./stars";
+
+.landing-container {
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+
+  .intro {
+    width: 750px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+
+    h1 {
+      font-size: header(large);
+    }
+
+    h3 {
+      font-size: subHeader(large);
+    }
+  }
+
+  .space {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: speed-up 3s ease-in-out infinite;
+  }
+  
+  @keyframes speed-up {
+    50% {
+      left: 65%;
+    }
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+@media (max-width: 768px) { 
+  .landing-container {
+    .intro {
+      width: 90%;
+
+      h1 {
+        font-size: header(medium);
+      }
+          
+      h3 {
+        font-size: subHeader(medium);
+      }
+    }
+  }
+} 
