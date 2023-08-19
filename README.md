@@ -1,49 +1,42 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+# fahad-hussain.com
+A portfolio blog powered by Gatsby that displays personal projects that I've worked on as well as projects that I've completed in the General Assembly Software Engineering Immersive (SEI) bootcamp. It also contains blogs that I've written about on computer science fundamentals and technology stacks that I've worked with. 
 
-## 🚀 Quick start
+## Features
+Some of the features that are included in this repository are:
+1. Google Analytics
+2. Toggle Light/Dark mode
+3. Lazy loading
+4. Dynamically generated blogs
+5. Integration of Contentful
 
-1.  **Create a Gatsby site.**
+## Dependencies
+* Bootstrap/JQuery/Popper.js
+* Sass
+* React Bootstrap
+## Gatsby Plugins
+* gatsby-plugin-google-gtag
+* gatsby-plugin-dark-mode
+* gatsby-plugin-react-helmet
+* gatsby-plugin-image
+* gatsby-plugin-sass
+* gatsby-source-filesystem
+* gatsby-source-contentful
+* gatsby-transformer-sharp
+* gatsby-plugin-sharp
+* gatsby-plugin-manifest
+* gatsby-plugin-gatsby-cloud
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+## Credits
+This repository would not look the way it does if it weren't for these sources. 
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+### Github repos
+These are the list of github repos that can be found in the Gatsby Starter Templates. I've used these templates to as an example to build off of my portfolio
+1. https://github.com/anubhavsrivastava/gatsby-starter-grayscale 
+2. https://github.com/smakosh/gatsby-portfolio-dev
+3. https://github.com/scttcper/gatsby-casper 
+4. https://gatsby-starter-point.netlify.app/
 
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+### Codepen Animations
+These are the list of animations I've used in codepen that I've incorporated into this portfolio
+1. https://codepen.io/sfahadh/pen/zYoabeX
+2. https://codepen.io/bnthor/pen/WQBNxO
