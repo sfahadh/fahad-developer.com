@@ -11,7 +11,6 @@ const Blogs = ({ blogs }) => {
         <div className="row blog-list">
           { blogs.map(({ node }) => {
             const image = getImage(node.thumbnail);
-            console.log(node)
 
             return (
               <article key={node.slug} className="col-lg-4 col-md-6 mb-5">

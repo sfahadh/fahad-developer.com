@@ -3,18 +3,21 @@
 @import "../functions";
 @import "../mixins";
 
+.navbar {
+	background-color: $black;
+}
+
 .mainNav {
 	background-color: transparent;
 	transition: background-color 0.8s ease-in-out;
 
 	.navbar-brand {
 		font-weight: weight(bold);
-		color: var(--text) !important;
 		padding: 0.5rem;
 
 		&:hover {
 			border-bottom: 2px solid $primary;
-			color: var(--text);
+			color: $primary;
 			opacity: 0.8;
 		}
 	}
@@ -26,11 +29,11 @@
 	#basic-navbar-nav {
 		.nav-link {
 			margin: 1rem;
-			color: var(--text);
 
 			&:hover {
 				border-bottom: 2px solid $primary;
 				opacity: 0.8;
+				color: $primary;
 			}
 		}
 
@@ -42,7 +45,7 @@
 }
 
 .navbar-shrink {
-	background-color: var(--layout) !important;
+	background-color: $white;
 }
 
 @media (max-width: 767px) {

@@ -1,49 +1,20 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import PropTypes from 'prop-types';
-import Toggle from "./toggle";
-import debounce from "lodash.debounce";
 import { Link } from "gatsby";
 import "../../styles/header/header.scss";
 
 const Header = () => {
-	const [visibilityClass, setVisibilityClass] = useState("");
 	const [openMenu, setOpenMenu] = useState("");
-
-	useEffect(() => {
-		handleScroll();
-		window.addEventListener('resize', debouncedScroll)
-		window.addEventListener('scroll', debouncedScroll);
-		
-		return () => {
-			window.removeEventListener('resize', debouncedScroll);
-			window.removeEventListener('scroll', debouncedScroll);
-		}
-	}, [visibilityClass])
 
 	const toggleMenu = () => {
 		setOpenMenu(openMenu === "not-active" ? "active" : "not-active");
 	}
-    
-	const handleScroll = () => {
-		const { pageYOffset, innerWidth, location } = window; 
-		if (pageYOffset > 425 || innerWidth < 768 || location.pathname !== "/") {
-			if (visibilityClass !== 'navbar-shrink') {
-				setVisibilityClass("navbar-shrink");
-			}
-		} else {
-			if (visibilityClass === 'navbar-shrink') {
-				setVisibilityClass("");
-			}
-		}
-	};
-
-	const debouncedScroll = useCallback(debounce(handleScroll, 50), [visibilityClass]);
 
   return (
-		<Navbar expand="md" className={`fixed-top ${visibilityClass}`}>
+		<Navbar expand="md" className={`fixed-top navbar`}>
 			<div className="container mainNav">
-				<h3 className="navbar-brand">Fahad Hussain</h3>
+				<Link to="/" className="nav-link navbar-brand">Fahad Hussain</Link>
 
 				<Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle">
 					<div className={`btn ${openMenu}`} onClick={ toggleMenu } onKeyDown={ toggleMenu } role="button" tabIndex={0}>
@@ -57,7 +28,6 @@ const Header = () => {
 					<Nav className="navbar-items">
 						<Link to="/projects" className="nav-link">Projects</Link>
 						<Link to="/blogs" className="nav-link">Blogs</Link>
-						<Toggle />
 					</Nav>
 				</Navbar.Collapse>
 			</div>
