@@ -40,7 +40,7 @@ export default Blogs;
 
 export const pageQuery = graphql`
 	query {
-		allContentfulBlogPost(sort: {fields: published, order: DESC}) {
+		allContentfulBlogPost(sort: {published: DESC}) {
 			edges {
 				node {
 					title

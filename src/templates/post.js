@@ -8,7 +8,7 @@ import "../styles/template.scss";
 
 const Post = ({ data }) => {
   const post = data.contentfulBlogPost;
-	console.log("post", post)
+	
   return (
     <Layout>
       <Seo

@@ -1,7 +1,7 @@
-exports.createPages = async function ({ actions, graphql }) {
+exports.createPages = async function ({ actions, graphql }: any) {
   const { data } = await graphql(`
-  query {
-      allContentfulBlogPost(sort: {fields: published, order: DESC}) {
+    query BlogPosts {
+      allContentfulBlogPost(sort: {published: DESC}) {
         edges {
           node {
             title
@@ -22,7 +22,7 @@ exports.createPages = async function ({ actions, graphql }) {
     }
   `)
 
-  data.allContentfulBlogPost.edges.forEach(edge => {
+  data.allContentfulBlogPost.edges.forEach((edge: any) => {
     const slug = edge.node.slug
     
     actions.createPage({

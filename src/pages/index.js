@@ -22,7 +22,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
 	query {
-		allContentfulBlogPost(sort: {fields: published, order: DESC}, limit: 3) {
+		allContentfulBlogPost(sort: {published: DESC}, limit: 3) {
 			edges {
 				node {
 					title
